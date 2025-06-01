@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabase";
-import {  Star, MoreVertical } from "lucide-react";
+import { Star, MoreVertical } from "lucide-react";
 
 export default function Reviews() {
   const [reviews, setReviews] = useState([]);
