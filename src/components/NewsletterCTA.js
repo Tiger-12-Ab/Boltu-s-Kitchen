@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { supabase } from "../supabase";
+import { Link } from "react-router-dom";
 
 const NewsletterCTA = () => {
   const [email, setEmail] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [modalType, setModalType] = useState(""); 
+  const [modalType, setModalType] = useState("");
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     const cleanedEmail = email.trim().toLowerCase();
-setEmail(cleanedEmail);
+    setEmail(cleanedEmail);
 
     if (!cleanedEmail || !cleanedEmail.includes("@")) {
       alert("Please enter a valid email.");
@@ -49,8 +50,6 @@ setEmail(cleanedEmail);
           body: JSON.stringify({ email: cleanedEmail }),
         }
       );
-
-      
 
       if (!resendRes.ok) {
         throw new Error("Failed to send welcome email.");
@@ -112,12 +111,12 @@ setEmail(cleanedEmail);
             </button>
           </form>
 
-          <a
-            href="/menu"
+          <Link
+            to="/menu"
             className="inline-block text-forest hover:text-orange font-medium"
           >
             View Our Menu →
-          </a>
+          </Link>
         </div>
       </div>
 
