@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default function ReviewsDashboard() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  const [setUser] = useState(null);
 
   const [isEditing, setIsEditing] = useState(false);
   const [editReview, setEditReview] = useState(null);
